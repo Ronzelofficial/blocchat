@@ -1,15 +1,23 @@
-<ol>
-    <li ng-repeat="room in rooms">
-        {{ room.name }}
-        <!-- edit a room -->
-        <!-- <input ng-model="room.name" ng-change="rooms.$save(room)" /> -->
-        <!-- delete a room -->
-        <!-- <button ng-click="rooms.$remove(room)">Delete Room</button> -->
-    </li>
-</ol>
+<br/>
 
-<!-- push a new room onto the array -->
-<form ng-submit="addRoom()">
-    <input ng-model="newRoomName" />
-    <button type="submit">Create Room</button>
-</form>
+Bloc Chat
+
+<button type="button" class="btn btn-default" ng-click="open()">Create New Room</button>
+
+<script type="text/ng-template" id="roomsModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Create a new room!</h3>
+    </div>
+    <div class="modal-body">
+        <!-- push a new room onto the array -->
+        Name: <input ng-model="newRoomName" />
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" type="button" ng-click="create()">Create</button>
+    </div>
+</script>
+
+<ul>
+    <li ng-repeat="room in rooms.rooms">{{ room.name }}</li>
+</ul>
