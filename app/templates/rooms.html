@@ -1,10 +1,10 @@
-<br/>
-
-Bloc Chat
-
-<button type="button" class="btn btn-default" ng-click="open()">Create New Room</button>
-
-<script type="text/ng-template" id="roomsModal.html">
+<div class="room-list-container">
+    <div class="room-list-title">
+        <span ui-sref="home">Bloc Chat</span>
+        <button type="button" class="btn btn-default" ng-click="open()">Create New Room</button>
+    </div>
+    
+    <script type="text/ng-template" id="roomsModal.html">
     <div class="modal-header">
         <h3 class="modal-title">Create a new room!</h3>
     </div>
@@ -16,8 +16,22 @@ Bloc Chat
         <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         <button class="btn btn-primary" type="button" ng-click="create()">Create</button>
     </div>
-</script>
+    </script>
 
-<ul>
-    <li ng-repeat="room in rooms.rooms">{{ room.name }}</li>
-</ul>
+<br/>
+    
+    <div class="room-list-rooms">
+        <div class="room-list-rooms-individual" ng-repeat="room in rooms.rooms" ng-click="setCurrentRoom(room)">
+            {{ room.name }}
+        </div>
+    </div>
+</div>
+
+<div class="chat-message-container">
+    <h4>{{ currentRoom.name }}</h4>
+    <div class="chat-message-messages" ng-repeat="message in messages">
+        {{ message.username }} ({{ message.sentAt }})
+        <br/>
+        - {{ message.content }}
+    </div>
+</div>

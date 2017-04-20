@@ -50,6 +50,7 @@ body {
     cursor: pointer;
 }
 
+/*
 .links-container .navbar-link:hover {
     color: rgb(233,50,117);
 }
@@ -58,13 +59,17 @@ body {
     color: black;
     background-color: white;
 }
+*/
 
+/*
 .navbar .logo {
     position: relative;
     left: 2rem;
     cursor: pointer;
 }
+*/
 
+/*
 .container {
     margin: 0 auto;
     max-width: 64rem;
@@ -73,6 +78,51 @@ body {
 .container.narrow {
     max-width: 56rem;
 }
+*/
+
+.room-list-container {
+    position: relative;
+    background-color: yellow;
+    top: 0px;
+    height: 50%;
+    min-height: 100%;
+    width: 15%;
+    min-width: 180px;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 1px 0px rgb(58,23,63);
+    padding-top: 9px;
+}
+
+.room-list-title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.room-list-title:hover {
+    cursor: pointer;
+}
+
+.room-list-rooms {
+    padding-right: 1300px;
+}
+
+.room-list-rooms-individual:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.15);
+}
+
+/*
+.chat-message-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    min-height: 100%;
+    width: 85%;
+    min-width: 420px;
+    padding-left: 9px;
+}
+*/
 
 /* Medium and small screen (640px) */
 @media (min-width: 640px) {
