@@ -23,3 +23,5 @@
         .module('blocChat')
         .controller('RoomCtrl', ['$scope', '$uibModal', 'Room', RoomCtrl]);
 })();
+
+

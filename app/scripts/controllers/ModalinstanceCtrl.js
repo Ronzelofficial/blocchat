@@ -19,3 +19,7 @@
         .module('blocChat')
         .controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'Room', ModalInstanceCtrl]);
 })();
+
+
+
+
