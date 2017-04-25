@@ -1,9 +1,9 @@
 (function() {
     function ModalInstanceCtrl($scope, $uibModalInstance, Room) {
-        $scope.rooms = Room.all;
+        $scope.rooms = Room;
         
         $scope.create = function() {
-            $scope.rooms.$add({
+            $scope.rooms.rooms.$add({
                 name: $scope.newRoomName
             });
             
