@@ -10,7 +10,7 @@
             var messages = firebase.database().child('message');
             
             return $firebaseArray(messages.orderByChild("roomId").equalTo(roomId));
-    
+              
           
       }
     };

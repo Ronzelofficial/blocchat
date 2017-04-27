@@ -1,13 +1,14 @@
 (function() {
     function Room($firebaseArray) {
-//        var firebaseRef = new Firebase("https://bloc-chat-fbcae.firebaseio.com");
-//        var rooms = $firebaseArray(firebaseRef.child('rooms'));
         
         var ref = firebase.database().ref().child("rooms"); 
         var rooms = $firebaseArray(ref);
         
         return {
-            rooms
+            rooms,
+            getMessage: function() {
+                return $firebaseArray(ref.child('messages').orderByChild("roomID").equalTo(roomId));
+            }
         };
     }
 

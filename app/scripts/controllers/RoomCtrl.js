@@ -1,5 +1,5 @@
 (function() {
-    function RoomCtrl($scope, $uibModal, Room, Message) {
+    function RoomCtrl($scope, $uibModal, Room, Message, $firebaseArray ) {
         $scope.rooms = Room;
         $scope.currentRoom = null;
         $scope.message = null;
@@ -11,9 +11,10 @@
             })
         };
         
+            
         $scope.setCurrentRoom = function(room) {
             $scope.currentRoom = room;
-            $scope.message = Room.getMessage(room.$id);
+            $scope.messages = Room.getMessages(room.$id);
         };
         
         return $scope.rooms;
