@@ -7,11 +7,21 @@
        </li>
       </ul>
 </section>
-<section class="right container">
-  <h1>{{ home.currentRoom.name}}</h1>
-  <div ng-repeat="message in home.messages" class="chat">
-    <p class="bold-capitalize">{{message.username}}</p>
-    <p>{{message.content}}</p>
-    <small>{{message.sent_at | date:"MMM',' dd',' h:mma"}}</small>
+<section class="right">
+  <div class="chat-container">
+    <h1>{{ home.currentRoom.name}}</h1>
+    <div ng-repeat="message in home.messages | orderBy: 'sent_at'" class="chat">
+      <p class="bold-capitalize">{{message.username}}</p>
+      <p>{{message.content}}</p>
+      <small>{{message.sent_at | date:"MMM',' dd',' h:mma"}}</small>
+    </div>
   </div>
+  <form name="sendMessageForm" class="send-form" ng-submit="home.send()">
+    <div class="input-field">
+      <input type="text" ng-model="home.text" name="text" placeholder="Send message">
+    </div>
+    <div class="send-button">
+      <input type="submit" id="submit" value="Send">
+    </div>
+  </form>
 </section>
