@@ -1,3 +1,17 @@
-<section class="hero-content">
-    <h1 class="hero-title" ui-sref="rooms">{{ home.heroTitle }}</h1>
+<section class="left">
+    <h1>Bloc Chat</h1>
+    <button type="button" class="btn btn-default" ng-click="home.open()">New room</button>
+    <ul>
+       <li ng-repeat="room in home.all">
+         <a ng-click="home.setRoom(room)"><h3>{{room.name}}</h3></a>
+       </li>
+      </ul>
+</section>
+<section class="right container">
+  <h1>{{ home.currentRoom.name}}</h1>
+  <div ng-repeat="message in home.messages" class="chat">
+    <p class="bold-capitalize">{{message.username}}</p>
+    <p>{{message.content}}</p>
+    <small>{{message.sent_at | date:"MMM',' dd',' h:mma"}}</small>
+  </div>
 </section>
