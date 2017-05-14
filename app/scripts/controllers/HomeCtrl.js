@@ -9,7 +9,13 @@
 
       this.currentRoom = room;
       this.messages = Room.getMessages(room);
+        
+        
+        console.log(room);
+        console.log(this.messages);
+        
     };
+      
 
     this.open = function() {
       $uibModal.open({

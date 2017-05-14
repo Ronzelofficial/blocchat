@@ -4,20 +4,22 @@
     var messages =  $firebaseArray(ref);
     this.myMessage = {};
 
+      console.log(messages);
+      
     this.myMessage.send = function(userName, content, room) {
 
       messages.$add({
         username: userName,
         content: content,
         sent_at: firebase.database.ServerValue.TIMESTAMP,
-        roomid: room.$id
+        roomID: room.$id
       });
 
     };
 
     return this.myMessage;
 
-
+console.log(messages);
   }
 
   angular

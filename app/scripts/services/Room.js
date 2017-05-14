@@ -24,13 +24,21 @@
         username: userName,
         content: content,
         sent_at: firebase.database.ServerValue.TIMESTAMP,
-        roomId: room.$id
+        roomID: room.$id
+          
       });
     };
+      
+      
+
 
     roomService.getMessages = function(room) {
+        
+        console.log("room.$id", room.$id);
 
       return $firebaseArray(messagesRef.orderByChild('roomID').equalTo(room.$id));
+//        return $firebaseArray(messagesRef.orderByChild('roomID').equalTo('-KiBC8C_1tcj3EdC2Etu'));
+        
 
 
     };
